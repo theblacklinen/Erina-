@@ -1,4 +1,4 @@
-# SungJinWoo Robot Example plugin format
+# ErinaBot Example plugin format
 
 ## Advanced: Pyrogram
 ```python3
