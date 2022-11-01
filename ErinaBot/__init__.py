@@ -105,11 +105,11 @@ if ENV:
     MONGO_DB_URL = os.environ.get("MONGO_DB_URL", "mongodb+srv://ok:lol@cluster1.udhzs7r.mongodb.net/?retryWrites=true&w=majority")  # MongoDB URL (From:- https://www.mongodb.com/)
     REDIS_URL = os.environ.get("REDIS_URL", None)  # REDIS URL (From:- Heraku & Redis)
     BOT_ID = int(os.environ.get("BOT_ID", 5417821247))  # Telegram Bot ID (EXP:- 1241223850)
-    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "@SungJinSupport")  # Support Chat Group Link (Use @AnimeCorps || Dont Use https://t.me/AnimeCorps)
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "@SungJinUpdates")  # Updates channel for bot (Use @TheSoloMonarch instead of t.me//example)
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "@ErinaSupport")  # Support Chat Group Link (Use @AnimeCorps || Dont Use https://t.me/AnimeCorps)
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "@ErinaUpdate")  # Updates channel for bot (Use @TheSoloMonarch instead of t.me//example)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)  # Use @SpamWatchSupport
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)  # From https://t.me/SpamWatchBot
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "@SungJinRobot")  # Bot Username
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "@Erina_GroupBot")  # Bot Username
     # Telethon Based String Session (2nd ID) [ From https://repl.it/@SpEcHiDe/GenerateStringSession ]
     APP_ID = os.environ.get("APP_ID", None)  # 2nd ID
     APP_HASH = os.environ.get("APP_HASH", None)  # 2nd ID
@@ -119,7 +119,7 @@ if ENV:
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)  # Don't Change
     BOT_NAME = os.environ.get("BOT_NAME", True)  # Name Of your Bot.4
     BOT_API_URL = os.environ.get('BOT_API_URL', "https://api.telegram.org/bot")
-    MONGO_DB = "SungJinWoo"
+    MONGO_DB = "ErinaBot"
     GOOGLE_CHROME_BIN = "/usr/bin/google-chrome"
     CHROME_DRIVER = "/usr/bin/chromedriver"
     
@@ -240,21 +240,21 @@ else:
 
 
 # Credits Logger
-print("[SungJinWoo] SungJin Is Starting. | Kaizuryu Project | Licensed Under MIT.")
-print("[SungJinWoo] Kawaii ! Successfully Connected With Kaizuryu HQ")
-print("[SungJinWoo] Project Maintained By: @TheShadowArsenal")
+print("[ErinaBot] Erina Is Starting. | Kaizuryu Project | Licensed Under MIT.")
+print("[ErinaBot] Kawaii ! Successfully Connected With Kaizuryu HQ")
+print("[ErinaBot] Project Maintained By: @TheShadowArsenal")
 
 
-print("[SungJinWoo]: Telegraph Installing")
+print("[ErinaBot]: Telegraph Installing")
 telegraph = Telegraph()
-print("[SungJin]: Telegraph Account Creating")
-telegraph.create_account(short_name='SungJinWoo')
+print("[Erina]: Telegraph Account Creating")
+telegraph.create_account(short_name='ErinaBot')
 updater = tg.Updater(token=TOKEN, base_url=BOT_API_URL, workers=WORKERS, request_kwargs={"read_timeout": 10, "connect_timeout": 10}, use_context=True)           
-print("[SungJin]: TELETHON CLIENT STARTING")
+print("[Erina]: TELETHON CLIENT STARTING")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 
 dispatcher = updater.dispatcher
-print("[SungJin]: PYROGRAM CLIENT STARTING")
+print("[Erina]: PYROGRAM CLIENT STARTING")
 session_name = TOKEN.split(":")[0]
 pgram = Client(
     session_name,
@@ -262,7 +262,7 @@ pgram = Client(
     api_hash=API_HASH,
     bot_token=TOKEN,
 )
-print("[SungJin]: Connecting To Kaizuryu HQ")
+print("[Erina]: Connecting To Kaizuryu HQ")
 mongodb = MongoClient(MONGO_DB_URL, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
@@ -272,9 +272,9 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-print("[SungJin]: Connecting To Kaizuryu HQ • PostgreSQL Database")
+print("[Erina]: Connecting To Kaizuryu HQ • PostgreSQL Database")
 #ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
-print("[SungJin]: Connecting To Kaizuryu (t.me/Kaizuryu)")
+print("[Erina]: Connecting To Kaizuryu (t.me/Kaizuryu)")
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 
