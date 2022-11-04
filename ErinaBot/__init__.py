@@ -1,4 +1,3 @@
-"""@Kaizuryu"""
 
 import logging
 import os
@@ -51,7 +50,7 @@ if ENV:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER",  -1001892260605)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "XtheAnonymous")
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "Xoltic")
 
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
@@ -240,9 +239,9 @@ else:
 
 
 # Credits Logger
-print("[ErinaBot] Erina Is Starting. | Kaizuryu Project | Licensed Under MIT.")
-print("[ErinaBot] Kawaii ! Successfully Connected With Kaizuryu HQ")
-print("[ErinaBot] Project Maintained By: @TheShadowArsenal")
+print("[ErinaBot] Erina Is Starting. | Xoltic | Licensed Under MIT.")
+print("[ErinaBot] Kawaii ! Successfully Connected With Elite Ten Council")
+print("[ErinaBot] Project Maintained By: @xoltic")
 
 
 print("[ErinaBot]: Telegraph Installing")
@@ -262,7 +261,7 @@ pgram = Client(
     api_hash=API_HASH,
     bot_token=TOKEN,
 )
-print("[Erina]: Connecting To Kaizuryu HQ")
+print("[Erina]: Connecting ELITE TEN")
 mongodb = MongoClient(MONGO_DB_URL, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
@@ -274,7 +273,7 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 print("[Erina]: Connecting To Kaizuryu HQ • PostgreSQL Database")
 #ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
-print("[Erina]: Connecting To Kaizuryu (t.me/Kaizuryu)")
+print("[Erina]: Connecting To Clan Network (t.me/AcGc_01)")
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 
