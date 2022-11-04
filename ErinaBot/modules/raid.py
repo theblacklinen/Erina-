@@ -12,7 +12,7 @@ from telegram.utils.helpers import mention_html
 from ErinaBot.modules.log_channel import loggable
 from ErinaBot.modules.helper_funcs.anonymous import user_admin, AdminPerms
 from ErinaBot.modules.helper_funcs.chat_status import bot_admin, connection_status, user_admin_no_reply
-from ErinaBot.modules.helper_funcs.decorators import SungJinWoocmd, SungJinWoocallback
+from ErinaBot.modules.helper_funcs.decorators import ErinaBotcmd, ErinaBotcallback
 from ErinaBot import LOGGER, updater
 
 import ErinaBot.modules.sql.welcome_sql as sql
@@ -37,7 +37,7 @@ def get_readable_time(time: int) -> str:
     return f"{t[0]} hour(s)" if time >= 3600 else f"{t[1]} minutes"
 
 
-@SungJinWoocmd(command="raid", pass_args=True)
+@ErinaBotcmd(command="raid", pass_args=True)
 @bot_admin
 @connection_status
 @loggable
@@ -125,7 +125,7 @@ def setRaid(update: Update, context: CallbackContext) -> Optional[str]:
             msg.reply_text("Unknown time given, give me something like 5m or 1h", parse_mode=ParseMode.HTML)
 
 
-@SungJinWoocallback(pattern="enable_raid=")
+@ErinaBotcallback(pattern="enable_raid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -162,7 +162,7 @@ def enable_raid_cb(update: Update, ctx: CallbackContext) -> Optional[str]:
     )
 
 
-@SungJinWoocallback(pattern="disable_raid=")
+@ErinaBotcallback(pattern="disable_raid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -188,7 +188,7 @@ def disable_raid_cb(update: Update, _: CallbackContext) -> Optional[str]:
     return logmsg
 
 
-@SungJinWoocallback(pattern="cancel_raid=")
+@ErinaBotcallback(pattern="cancel_raid=")
 @connection_status
 @user_admin_no_reply
 def disable_raid_cb(update: Update, _: CallbackContext):
@@ -199,7 +199,7 @@ def disable_raid_cb(update: Update, _: CallbackContext):
         parse_mode=ParseMode.HTML)
 
 
-@SungJinWoocmd(command="raidtime")
+@ErinaBotcmd(command="raidtime")
 @connection_status
 @loggable
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
@@ -233,7 +233,7 @@ def raidtime(update: Update, context: CallbackContext) -> Optional[str]:
         msg.reply_text("Unknown time given, give me something like 5m or 1h", parse_mode=ParseMode.HTML)
 
 
-@SungJinWoocmd(command="raidactiontime", pass_args=True)
+@ErinaBotcmd(command="raidactiontime", pass_args=True)
 @connection_status
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
