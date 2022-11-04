@@ -11,6 +11,6 @@ async def awake(event):
   STB += "**Python Version : 3.9.7**\n\n"
   STB += "**python-Telegram-Bot : 13.7**\n\n"
   BUTTON = [[Button.url("Support", "https://t.me/ErinaSupport"), Button.url("Updates", "https://t.me/ErinaUpdate")]]
-  await tbot.send_file(event.chat_id, Erina, caption=STB,  buttons=BUTTON)
+  await tbot.send_file(event.chat_id, ErinaBot, caption=STB,  buttons=BUTTON)
 
   # thanks to stb the gay
