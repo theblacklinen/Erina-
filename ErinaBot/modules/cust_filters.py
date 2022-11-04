@@ -29,7 +29,7 @@ from ErinaBot.modules.sql import cust_filters_sql as sql
 from ErinaBot.modules.connection import connected
 
 from ErinaBot.modules.helper_funcs.alternate import send_message, typing_action
-from ErinaBot.modules.helper_funcs.decorators import SungJinWoocmd, SungJinWoomsg, SungJinWoocallback
+from ErinaBot.modules.helper_funcs.decorators import ErinaBotcmd, ErinaBotmsg, ErinaBotcallback
 
 from ErinaBot.modules.helper_funcs.anonymous import user_admin, AdminPerms
 
@@ -49,7 +49,7 @@ ENUM_FUNC_MAP = {
 
 
 @typing_action
-@SungJinWoocmd(command='filters', admin_ok=True)
+@ErinaBotcmd(command='filters', admin_ok=True)
 def list_handlers(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -96,7 +96,7 @@ def list_handlers(update, context):
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@SungJinWoocmd(command='filter', run_async=False)
+@ErinaBotcmd(command='filter', run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def filters(update, context):  # sourcery no-metrics
@@ -220,7 +220,7 @@ def filters(update, context):  # sourcery no-metrics
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@SungJinWoocmd(command='stop', run_async=False)
+@ErinaBotcmd(command='stop', run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def stop_filter(update, context):
@@ -261,7 +261,7 @@ def stop_filter(update, context):
     )
 
 
-@SungJinWoomsg((CustomFilters.has_text & ~Filters.update.edited_message))
+@ErinaBotmsg((CustomFilters.has_text & ~Filters.update.edited_message))
 def reply_filter(update, context):  # sourcery no-metrics
     chat = update.effective_chat  # type: Optional[Chat]
     message = update.effective_message  # type: Optional[Message]
@@ -454,7 +454,7 @@ def reply_filter(update, context):  # sourcery no-metrics
             break
 
 
-@SungJinWoocmd(command="removeallfilters", filters=Filters.chat_type.groups)
+@ErinaBotcmd(command="removeallfilters", filters=Filters.chat_type.groups)
 def rmall_filters(update, _):
     chat = update.effective_chat
     user = update.effective_user
@@ -481,7 +481,7 @@ def rmall_filters(update, _):
         )
 
 
-@SungJinWoocallback(pattern=r"filters_.*")
+@ErinaBotcallback(pattern=r"filters_.*")
 def rmall_callback(update, _):
     query = update.callback_query
     chat = update.effective_chat
