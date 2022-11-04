@@ -111,9 +111,7 @@ buttons = [
                        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url=f"https://t.me/ErinaUpdate" )
                     ],
                     [                  
-                       InlineKeyboardButton(
-                             text=" Cᴏᴍᴍᴀɴᴅs ",
-                             callback_data="help_back" ) ,
+                       InlineKeyboardButton(text=" Cᴏᴍᴍᴀɴᴅs ", callback_data="help_back" )
                      ], 
     ]
 
