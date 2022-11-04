@@ -9,7 +9,7 @@ from telegram.inline.inlinekeyboardbutton import InlineKeyboardButton
 from telegram.inline.inlinekeyboardmarkup import InlineKeyboardMarkup
 
 from ErinaBot import DEV_USERS, DRAGONS, dispatcher
-from ErinaBot.modules.helper_funcs.decorators import SungJinWoocallback
+from ErinaBot.modules.helper_funcs.decorators import ErinaBotcallback
 
 class AdminPerms(Enum):
     CAN_RESTRICT_MEMBERS = 'can_restrict_members'
@@ -62,7 +62,7 @@ def user_admin(permission: AdminPerms):
     return wrapper
 
 
-@SungJinWoocallback(pattern="anoncb")
+@ErinaBotcallback(pattern="anoncb")
 def anon_callback_handler1(upd: Update, _: CallbackContext):
     callback = upd.callback_query
     perm = callback.data.split('/')[3]
