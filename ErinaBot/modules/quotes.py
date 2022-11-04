@@ -71,35 +71,3 @@ async def quott_(event):
     os.remove(file)
     await msg.delete()
     return message
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
