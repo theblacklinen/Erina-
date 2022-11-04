@@ -15,7 +15,7 @@ from ErinaBot import dispatcher as d, LOGGER
 from typing import Optional, Union, List
 
 
-class SungJinWooHandler:
+class ErinaBotHandler:
     def __init__(self, d):
         self._dispatcher = d
 
@@ -56,7 +56,7 @@ class SungJinWooHandler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[SungJinWooCMD] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[ErinaBotCMD] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -83,7 +83,7 @@ class SungJinWooHandler:
                         )
                     )
                 LOGGER.debug(
-                    f"[SungJinWooCMD] Loaded handler {command} for function {func.__name__}"
+                    f"[ErinaBotCMD] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -112,7 +112,7 @@ class SungJinWooHandler:
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
                 LOGGER.debug(
-                    f"[SungJinWooMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[ErinaBotMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -126,7 +126,7 @@ class SungJinWooHandler:
                         MessageHandler(pattern, func, run_async=run_async)
                     )
                 LOGGER.debug(
-                    f"[SungJinWooMSG] Loaded filter pattern {pattern} for function {func.__name__}"
+                    f"[ErinaBotMSG] Loaded filter pattern {pattern} for function {func.__name__}"
                 )
 
             return func
@@ -141,7 +141,7 @@ class SungJinWooHandler:
                 )
             )
             LOGGER.debug(
-                f"[SungJinWooCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[ErinaBotCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
@@ -167,14 +167,14 @@ class SungJinWooHandler:
                 )
             )
             LOGGER.debug(
-                f"[SungJinWooINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
+                f"[ErinaBotINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
             )
             return func
 
         return _inlinequery
 
 
-SungJinWoocmd = SungJinWooHandler(d).command
-SungJinWoomsg = SungJinWooHandler(d).message
-SungJinWoocallback = SungJinWooHandler(d).callbackquery
-SungJinWooinline = SungJinWooHandler(d).inlinequery
+ErinaBotcmd = ErinaBotHandler(d).command
+ErinaBotmsg = ErinaBotHandler(d).message
+ErinaBotcallback = ErinaBotHandler(d).callbackquery
+ErinaBotinline = ErinaBotHandler(d).inlinequery
