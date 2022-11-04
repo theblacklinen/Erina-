@@ -3,7 +3,7 @@
 from telethon import events, Button, custom
 from ErinaBot.events import register
 from ErinaBot import telethn as tbot
-PHOTO = "https://te.legra.ph/file/dfd7cd7877f71c10b0570.jpg"
+ErinaBot = "https://te.legra.ph/file/dfd7cd7877f71c10b0570.jpg"
 @register(pattern=("/alive"))
 async def awake(event):
   STB = event.sender.first_name
