@@ -107,16 +107,13 @@ buttons = [
                             url=f"t.me/{BOT_USERNAME}?startgroup=true")
                     ],
                    [
-                       InlineKeyboardButton(text="📓 Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
-                       InlineKeyboardButton(text="Source 🌐", url=f"https://github.com/TheBlackLinen")
+                       InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/ErinaSupport" ),
+                       InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url=f"https://t.me/ErinaUpdate" )
                     ],
                     [                  
                        InlineKeyboardButton(
-                             text="Sᴜᴘᴘᴏʀᴛ ",
-                             url=f"https://t.me/ErinaSupport"),
-                       InlineKeyboardButton(
-                             text="Uᴘᴅᴀᴛᴇs",
-                             url=f"https://t.me/ErinaUpdate")
+                             text=" Cᴏᴍᴍᴀɴᴅs ",
+                             callback_data="help_back"
                      ], 
     ]
 
